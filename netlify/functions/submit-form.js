@@ -28,11 +28,11 @@ exports.handler = async (event) => {
     }
 
     const msg = {
-      to: 'edilkappasas@outlook.com', // L'email dove vuoi ricevere le notifiche
+      to: 'easytravel7781@gmail.com', // L'email dove vuoi ricevere le notifiche
       from: {
         name: 'Sito Edilkappa',
         // !!! SOSTITUISCI CON LA TUA EMAIL VERIFICATA SU SENDGRID !!!
-        email: 'LA_TUA_EMAIL_VERIFICATA@dominio.com' 
+        email: 'christianstano450@gmail.com' 
       },
       subject: `Nuova richiesta di assistenza da ${name}`,
       html: `
