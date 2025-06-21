@@ -1,0 +1,348 @@
+/* Reset base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #003366;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo img {
+  width: 49px;
+  height: auto;
+}
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #004080;
+  animation: slideDown 0.3s ease forwards;
+  z-index: 1000;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.nav-menu a {
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+}
+.nav-menu a:hover {
+  background-color: #0059b3;
+}
+.nav-menu.active {
+  display: flex;
+}
+/* Overlay + Home */
+.overlay {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background: url("logo-edilizia.png") no-repeat center center/cover;
+  position: relative;
+  padding: 20px;
+}
+#home-text {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 600px;
+  color: #003366;
+}
+/* Form section */
+
+
+
+.assistenza-section {
+  padding: 2rem;
+  background-color: #ffffff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#assistenza {
+  width: 100%;
+}
+.form-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background-color: #e65c00;
+}
+/* Footer */
+/* Footer */
+footer {
+  background-color: #002244;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+footer i {
+  color: #ffcc00;
+  min-width: 20px;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    padding: 0 1rem;
+  }
+
+  .footer-content h3 {
+    font-size: 1rem;
+  }
+
+  footer p {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
+/* From Uiverse.io by abrahamcalsin */ 
+.dot-spinner {
+  --uib-size: 2.8rem;
+  --uib-speed: .9s;
+  --uib-color: #183153;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+}
+
+.dot-spinner__dot:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.dot-spinner__dot:nth-child(2)::before {
+  animation-delay: calc(var(--uib-speed) * -0.875);
+}
+
+.dot-spinner__dot:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.dot-spinner__dot:nth-child(3)::before {
+  animation-delay: calc(var(--uib-speed) * -0.75);
+}
+
+.dot-spinner__dot:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.dot-spinner__dot:nth-child(4)::before {
+  animation-delay: calc(var(--uib-speed) * -0.625);
+}
+
+.dot-spinner__dot:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.dot-spinner__dot:nth-child(5)::before {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+.dot-spinner__dot:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.dot-spinner__dot:nth-child(6)::before {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+
+.dot-spinner__dot:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.dot-spinner__dot:nth-child(7)::before {
+  animation-delay: calc(var(--uib-speed) * -0.25);
+}
+
+.dot-spinner__dot:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+.dot-spinner__dot:nth-child(8)::before {
+  animation-delay: calc(var(--uib-speed) * -0.125);
+}
+
+@keyframes pulse0112 {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Aggiungi alla fine di style.css */
+.form-step {
+  display: none; /* Nasconde tutti i passaggi per impostazione predefinita */
+  width: 100%;
+}
+
+.form-step.active {
+  display: block; /* Mostra solo il passaggio attivo */
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edilkappa - Assistenza</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo" onclick="showHome()">
+    <img src="IMG/logo.png" alt="Logo Edilkappa" /> Edilkappa
+  </div>
+  <button class="hamburger" aria-label="Apri menu" onclick="toggleMenu()">☰</button>
+  <nav id="nav-menu" class="nav-menu">
+    <a onclick="showHome()">Home</a>
+    <a onclick="openForm()">Richiedi Assistenza</a>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay">
+  <div id="home-text">
+    <h1>Benvenuto in Edilkappa</h1>
+    <p>Qui puoi richiedere assistenza per i tuoi lavori edili.</p>
+  </div>
+  <div id="home-text">
+    <h2>Cos'è EdilKappa</h2>
+    <p>EdilKappa è una impresa edile che si occupa di qualsiasi tipo di lavoro edile che comprende lavori di muratura, idraulica, manutenzioni di vari tipi e molto altro</p>
+  </div>
+</div>
+
+<section class="assistenza-section" id="assistenza" style="display:none;">
+  <h2>Compila il modulo con i dati richiesti per ricevere assistenza</h2>
+  
+  <form id="myForm" action="/.netlify/functions/submit-form" class="form-card">
+    
+    <div id="form-step-1" class="form-step">
+      <label for="name">Nome</label>
+      <input id="name" name="Nome Cliente" type="text" required placeholder="Il tuo nome" />
+      <div id="stepNavigation">
+        <button type="button" onclick="nextStep()">Avanti</button>
+      </div>
+    </div>
+
+    <div id="form-step-2" class="form-step">
+      <label for="issue">Descrivi il problema</label>
+      <textarea id="issue" name="Descrizione Problema" required placeholder="Di cosa hai bisogno?"></textarea>
+      <div id="stepNavigation">
+        <button type="button" onclick="prevStep()">Indietro</button>
+        <button type="button" onclick="nextStep()">Avanti</button>
+      </div>
+    </div>
+    
+    <div id="form-step-3" class="form-step">
+      <label for="photo">Allega una foto (opzionale)</label>
+      <input id="photo" type="file" name="file" accept="image/*" onchange="previewImage(event)" />
+      <div id="imagePreview" style="margin-top:10px;"></div>
+      <div id="stepNavigation">
+        <button type="button" onclick="prevStep()">Indietro</button>
+        <button type="button" onclick="nextStep()">Avanti</button>
+      </div>
+    </div>
+
+    <div id="form-step-4" class="form-step">
+      <label for="phone">Numero di telefono</label>
+      <input id="phone" name="Numero Telefono" type="tel" required placeholder="Il tuo numero di telefono" />
+      <div id="stepNavigation">
+        <button type="button" onclick="prevStep()">Indietro</button>
+        <button type="button" onclick="nextStep()">Avanti</button>
+      </div>
+    </div>
+
+    <div id="form-step-5" class="form-step">
+      <h3>Conferma i dati</h3>
+      <p>Rivedi i dati che hai inserito prima di inviare.</p>
+      <div id="summary">
+        </div>
+      <div id="stepNavigation">
+        <button type="button" onclick="prevStep()">Indietro</button>
+        <button type="button" onclick="handleSubmit(event)">Conferma e Invia</button>
+      </div>
+    </div>
+
+  </form>
+</section>
+
+<div id="loadingSpinner" style="display:none; justify-content:center; align-items:center; min-height:200px;">
+  <div class="dot-spinner">
+    <div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div><div class="dot-spinner__dot"></div>
+  </div>
+</div>
+
+<footer>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
